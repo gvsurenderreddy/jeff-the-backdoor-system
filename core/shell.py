@@ -39,9 +39,11 @@ def interpret_command (line) :
 def interpret_stream (stream) :
 	while True :
 		line = stream.readline ()
-		if line is None :
+		if line == '' :
 			break
 		line = line.strip ('\n\r')
+		if line == '' :
+			continue
 		error = interpret_command (line)
 		if error is not None :
 			crash ('interpret_command failed')
