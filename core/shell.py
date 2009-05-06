@@ -21,8 +21,8 @@ def handle_command (parts) :
 	return None
 
 
-command_pattern = r'^[ \t]*(?:(?:[a-zA-Z0-9_.-]+)[ \t]*)+[ \t]*$'
-command_part_pattern = r'[a-zA-Z0-9_.-]+'
+command_pattern = r'^[ \t]*(?:(?:[^ \t]+)[ \t]*)+[ \t]*$'
+command_part_pattern = r'[^ \t]+'
 command_re = re.compile (command_pattern)
 command_part_re = re.compile (command_part_pattern)
 

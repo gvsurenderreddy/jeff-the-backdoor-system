@@ -19,6 +19,8 @@ do
 	cat "${USER_KEY}" >>"${JBS_SSH_KEYS_NEW}"
 done
 
-mv "${JBS_SSH_KEYS_NEW}" "${JBS_SSH_KEYS}"
+cat "${JBS_SSH_KEYS_NEW}" >"${JBS_SSH_KEYS}"
+
+rm "${JBS_SSH_KEYS_NEW}"
 
 exit 0
