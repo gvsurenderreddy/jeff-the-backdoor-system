@@ -6,7 +6,7 @@ if test -n "${JBS_HOME:-}" ; then . "${JBS_HOME}/core/internals.bash" ; else . "
 
 test "${#}" -eq 0
 
-for TARGET in "${JBS_COMMANDS}"/*.bash "${JBS_COMMANDS}"/*.acl "${JBS_USERS}"/*.pub
+for TARGET in "${JBS_COMMANDS}"/*.bash "${JBS_COMMANDS}"/*.bash.acl "${JBS_USERS}"/*.pub
 do
 	test -f "${TARGET}" || continue
 	test ! -f "${TARGET}.asc" || ! gpg --verify "${TARGET}.asc" 2>/dev/null || continue

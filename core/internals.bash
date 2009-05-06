@@ -22,6 +22,7 @@ JBS_EXEC="${JBS_CORE}/exec.bash"
 JBS_SHELL="${JBS_CORE}/shell.bash"
 JBS_VFY_SIG="${JBS_CORE}/vfy_sig.bash"
 JBS_VFY_ACL="${JBS_CORE}/vfy_acl.bash"
+JBS_GET_CMD="${JBS_CORE}/get_cmd.bash"
 
 JBS_KEYS="${JBS_CORE}/keys.gpg"
 JBS_SSH_KEYS="${JBS_USERS}/keys.ssh"
