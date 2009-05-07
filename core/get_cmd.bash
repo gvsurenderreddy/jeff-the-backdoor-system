@@ -12,7 +12,7 @@ TARGET_BASH_ASC_URL="${TARGET_URL}.bash.asc"
 TARGET_BASH_ACL_URL="${TARGET_URL}.bash.acl"
 TARGET_BASH_ACL_ASC_URL="${TARGET_URL}.bash.acl.asc"
 
-JBS_COMMANDS_NEW="${JBS_COMMANDS}/$( uuid )"
+JBS_COMMANDS_NEW="${JBS_TMP}/$( uuid )"
 test ! -e "${JBS_COMMANDS_NEW}"
 mkdir "${JBS_COMMANDS_NEW}"
 

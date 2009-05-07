@@ -17,6 +17,7 @@ JBS_CORE="${JBS_HOME}/core"
 JBS_USERS="${JBS_HOME}/users"
 JBS_COMMANDS="${JBS_HOME}/commands"
 JBS_STORE="${JBS_HOME}/store"
+JBS_TMP="${JBS_HOME}/tmp"
 
 JBS_EXEC="${JBS_CORE}/exec.bash"
 JBS_SHELL="${JBS_CORE}/shell.bash"
