@@ -6,6 +6,4 @@ test "${#}" -eq 0
 
 sudo poweroff
 
-echo ok
-
 exit 0

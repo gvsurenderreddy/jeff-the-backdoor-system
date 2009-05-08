@@ -6,6 +6,4 @@ test "${#}" -eq 0
 
 sudo eject
 
-echo ok
-
 exit 0
