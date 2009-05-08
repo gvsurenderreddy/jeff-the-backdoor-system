@@ -29,7 +29,7 @@ JBS_USR_GET="${JBS_CORE}/usr_get.bash"
 JBS_USR_RM="${JBS_CORE}/usr_rm.bash"
 JBS_USR_MK="${JBS_CORE}/usr_mk.bash"
 
-JBS_SIG_KEYS="${JBS_CORE}/keys.gpg"
+JBS_SIG_KEYS="${JBS_USERS}/keys.gpg"
 JBS_SSH_KEYS="${JBS_USERS}/keys.ssh"
 
 
