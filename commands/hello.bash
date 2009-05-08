@@ -3,5 +3,5 @@
 set -e -u -o pipefail || exit 1
 
 test "${#}" -eq 0
-echo "hello!"
+echo 'hello'
 exit 0

@@ -14,17 +14,10 @@ test -f "${TARGET_ACL}" || die "target acl {{${TARGET_ACL}}} not found!"
 
 TARGET_MD5="$( md5sum -t <"${TARGET}" )"
 
-grep \
-		-F -e "${TARGET_MD5}" \
-		"${TARGET_ACL}" \
-	>/dev/null \
-|| die "target acl md5 {{${TARGET_ACL}}} mismatch!"
+test -n "${JBS_USER_OVERRIDE:-}" || exit 0
 
-test -n "${JBS_USER_OVERRIDE:-}" \
-|| grep \
-		-F -e "${JBS_USER}" -e '*' \
-		"${TARGET_ACL}" \
-	>/dev/null \
-|| die "target acl user {{${TARGET_ACL}}} mismatch!"
+grep -F -e "${TARGET_MD5}" "${TARGET_ACL}" >/dev/null || die "target acl md5 {{${TARGET_ACL}}} mismatch!"
+
+grep -F -e "${JBS_USER}" -e '*' "${TARGET_ACL}" >/dev/null || die "target acl user {{${TARGET_ACL}}} mismatch!"
 
 exit 0

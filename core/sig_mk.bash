@@ -8,10 +8,22 @@ test "${#}" -eq 0
 
 for TARGET in "${JBS_COMMANDS}"/*.bash "${JBS_COMMANDS}"/*.bash.acl "${JBS_USERS}"/*.pub
 do
+	
 	test -f "${TARGET}" || continue
-	test ! -f "${TARGET}.asc" || ! gpg --verify "${TARGET}.asc" 2>/dev/null || continue
-	info "signing target {{${TARGET}}}..."
-	gpg --detach-sign --armor "${TARGET}"
+	
+	TARGET_ASC="${TARGET}.asc"
+	
+	test -f "${TARGET_ASC}" && gpg --verify "${TARGET_ASC}" 2>/dev/null && continue
+	
+	TARGET_ASC_NEW="${JBS_TMP}/$( uuid )"
+	test ! -e "${TARGET_ASC_NEW}"
+	
+	info "making signature for {{${TARGET}}}..."
+	
+	gpg --detach-sign --armor --output "${TARGET_ASC_NEW}" "${TARGET}"
+	
+	mv "${TARGET_ASC_NEW}" "${TARGET_ASC}"
+	
 done
 
 exit 0

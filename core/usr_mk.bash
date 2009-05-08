@@ -12,6 +12,7 @@ touch "${JBS_SSH_KEYS_NEW}"
 
 for TARGET_PUB in "${JBS_USERS}"/*.pub
 do
+	
 	test -f "${TARGET_PUB}" || continue
 	
 	"${JBS_SIG_VFY}" "${TARGET_PUB}" || continue
