@@ -14,7 +14,8 @@ adduser --system \
 		--home /home/jeff \
 		--shell /home/jeff/.jbs/core/cmd_shell.bash \
 		--group \
-		--disabled-password
+		--disabled-password \
+		jeff
 
 
 cat <<EOF >>/etc/sudoers
