@@ -1,6 +1,13 @@
-#!/bin/bash
+#!/bin/bash --verbose
 
 set -e -u -o pipefail
+
+test "${#}" -eq 0
+
+
+test ! -e /etc/jbs
+
+echo '2db52366-3bbe-11de-8f5f-001b2400005e' >/etc/jbs
 
 
 adduser --system \
@@ -43,3 +50,6 @@ chmod u=rwX,g=,o= /home/jeff
 
 
 /etc/init.d/ssh restart
+
+
+exit 0
