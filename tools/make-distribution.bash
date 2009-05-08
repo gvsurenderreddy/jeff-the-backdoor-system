@@ -4,7 +4,7 @@ set -e -u -o pipefail
 
 test "${#}" -eq 0
 
-git archive --format=tar HEAD core >./dist/jbs-core.tar
+tar -c ./core --exclude=.gitignore >./dist/jbs-core.tar
 
 tar -c ./users --exclude=.gitignore >./dist/jbs-users.tar
 

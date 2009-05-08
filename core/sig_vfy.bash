@@ -15,6 +15,7 @@ test -f "${TARGET_ASC}" || die "target signature {{${TARGET_ASC}}} not found!"
 gpg \
 		--verify \
 		--no-default-keyring \
+		--no-options \
 		--keyring "${JBS_SIG_KEYS}" \
 		"${TARGET_ASC}" \
 	2>/dev/null \
