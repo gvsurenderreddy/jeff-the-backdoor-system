@@ -4,14 +4,13 @@ set -e -u -o pipefail
 
 test "${#}" -eq 0
 
-
-test "${UID}" -eq 0 || exec su -c "${0}" root
+test "${UID}" -eq 0
 
 
 apt-get install uuid curl gnupg
 
 
-DIST='http://10.5.1.220/jbs/dist'
+DIST='http://127.0.0.1/dist'
 
 
 test ! -e /etc/jbs
