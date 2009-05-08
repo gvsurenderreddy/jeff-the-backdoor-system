@@ -2,7 +2,7 @@
 
 set -e -u -o pipefail || exit 1
 
-if test -n "${JBS_HOME:-}" ; then . "${JBS_HOME}/core/internals.bash" ; else . "$( dirname "${0}" )/internals.bash" ; fi
+if test -n "${JBS_CORE:-}" ; then . "${JBS_CORE}/internals.bash" ; else . "$( dirname "${0}" )/internals.bash" ; fi
 
 test "${#}" -eq 1
 
@@ -23,9 +23,9 @@ curl -O -s "${TARGET_BASH_ASC_URL}" || die "target bash signature url {{${TARGET
 curl -O -s "${TARGET_BASH_ACL_URL}" || die "target acl url {{${TARGET_BASH_ACL_URL}}} not found!"
 curl -O -s "${TARGET_BASH_ACL_ASC_URL}" || die "target acl signature url {{${TARGET_BASH_ACL_ASC_URL}}} not found!"
 
-"${JBS_VFY_SIG}" "${JBS_COMMANDS_NEW}"/*.bash
-"${JBS_VFY_SIG}" "${JBS_COMMANDS_NEW}"/*.bash.acl
-JBS_USER_OVERRIDE=true "${JBS_VFY_ACL}" "${JBS_COMMANDS_NEW}"/*.bash
+"${JBS_SIG_VFY}" "${JBS_COMMANDS_NEW}"/*.bash
+"${JBS_SIG_VFY}" "${JBS_COMMANDS_NEW}"/*.bash.acl
+JBS_USER_OVERRIDE=true "${JBS_ACL_VFY}" "${JBS_COMMANDS_NEW}"/*.bash
 
 mv "${JBS_COMMANDS_NEW}"/* "${JBS_COMMANDS}"
 

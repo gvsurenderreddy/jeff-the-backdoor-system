@@ -8,9 +8,9 @@ import sys
 def handle_command (parts) :
 	if len (parts) == 0 :
 		crash ('zero command parts')
-	jbs_exec = os.getenv ('JBS_EXEC', None)
+	jbs_exec = os.getenv ('JBS_CMD_EXEC', None)
 	if jbs_exec is None :
-		crash ('undefined JBS_EXEC')
+		crash ('undefined JBS_CMD_EXEC')
 	try :
 		process = subprocess.Popen ([jbs_exec] + parts)
 		outcome = process.wait ()

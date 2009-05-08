@@ -2,7 +2,7 @@
 
 set -e -u -o pipefail || exit 1
 
-if test -n "${JBS_HOME:-}" ; then . "${JBS_HOME}/core/internals.bash" ; else . "$( dirname "${0}" )/internals.bash" ; fi
+if test -n "${JBS_CORE:-}" ; then . "${JBS_CORE}/internals.bash" ; else . "$( dirname "${0}" )/internals.bash" ; fi
 
 test "${#}" -eq 1
 

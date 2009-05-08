@@ -19,13 +19,13 @@ JBS_COMMANDS="${JBS_HOME}/commands"
 JBS_STORE="${JBS_HOME}/store"
 JBS_TMP="${JBS_HOME}/tmp"
 
-JBS_EXEC="${JBS_CORE}/exec.bash"
-JBS_SHELL="${JBS_CORE}/shell.bash"
-JBS_VFY_SIG="${JBS_CORE}/vfy_sig.bash"
-JBS_VFY_ACL="${JBS_CORE}/vfy_acl.bash"
-JBS_GET_CMD="${JBS_CORE}/get_cmd.bash"
+JBS_CMD_EXEC="${JBS_CORE}/cmd_exec.bash"
+JBS_CMD_SHELL="${JBS_CORE}/cmd_shell.bash"
+JBS_CMD_GET="${JBS_CORE}/cmd_get.bash"
+JBS_SIG_VFY="${JBS_CORE}/sig_vfy.bash"
+JBS_ACL_VFY="${JBS_CORE}/acl_vfy.bash"
 
-JBS_KEYS="${JBS_CORE}/keys.gpg"
+JBS_SIG_KEYS="${JBS_CORE}/keys.gpg"
 JBS_SSH_KEYS="${JBS_USERS}/keys.ssh"
 
 
