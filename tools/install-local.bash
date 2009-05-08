@@ -5,7 +5,13 @@ set -e -u -o pipefail
 test "${#}" -eq 0
 
 
-DIST='http://127.0.0.1:9999/dist'
+test "${UID}" -eq 0 || exec su -c "${0}" root
+
+
+apt-get install uuid curl gnupg
+
+
+DIST='http://10.5.1.220/jbs/dist'
 
 
 test ! -e /etc/jbs
