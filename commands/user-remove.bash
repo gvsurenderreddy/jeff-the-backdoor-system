@@ -6,5 +6,5 @@ set -e -u -o pipefail || exit 1
 
 test "${#}" -ne 0
 
-exec "${JBS_CMD_GET}" "${@}"
+exec "${JBS_USR_RM}" "${@}"
 exit 1

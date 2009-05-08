@@ -15,6 +15,8 @@ export JBS_CMD_EXEC
 test "${#}" -ge 1
 
 TARGET="${1}"
+[[ "${TARGET}" =~ ^[a-zA-Z0-9_-]+$ ]] || die 'target name invalid!'
+
 TARGET_BASH="${JBS_COMMANDS}/${1}.bash"
 TARGET_BASH_ACL="${JBS_COMMANDS}/${1}.bash.acl"
 
