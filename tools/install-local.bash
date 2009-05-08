@@ -5,7 +5,7 @@ set -e -u -o pipefail
 test "${#}" -eq 0
 
 
-DIST='http://10.0.0.130:9999/dist'
+DIST='http://127.0.0.1:9999/dist'
 
 
 test ! -e /etc/jbs
@@ -39,6 +39,8 @@ PermitUserEnvironment yes
 #end{2db52366-3bbe-11de-8f5f-001b2400005e}
 
 EOF
+
+/etc/init.d/ssh restart
 
 
 mkdir /home/jeff/.jbs
