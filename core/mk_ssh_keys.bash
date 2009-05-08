@@ -6,7 +6,7 @@ if test -n "${JBS_HOME:-}" ; then . "${JBS_HOME}/core/internals.bash" ; else . "
 
 test "${#}" -eq 0
 
-JBS_SSH_KEYS_NEW=""${JBS_TMP}/$( uuid )"
+JBS_SSH_KEYS_NEW="${JBS_TMP}/$( uuid )"
 test ! -e "${JBS_SSH_KEYS_NEW}"
 touch "${JBS_SSH_KEYS_NEW}"
 

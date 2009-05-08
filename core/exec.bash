@@ -6,6 +6,9 @@ if test -n "${JBS_HOME:-}" ; then . "${JBS_HOME}/core/internals.bash" ; else . "
 
 export JBS_HOME
 export JBS_USER
+export JBS_CORE
+export JBS_STORE
+export JBS_TMP
 export JBS_SHELL
 export JBS_EXEC
 

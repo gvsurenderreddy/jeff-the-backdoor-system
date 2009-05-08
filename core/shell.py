@@ -17,7 +17,8 @@ def handle_command (parts) :
 	except Exception, error :
 		crash ('subprocess raised exception')
 	if outcome != 0 :
-		crash ('command failed')
+		printf_error ('command failed!')
+		return None
 	return None
 
 
