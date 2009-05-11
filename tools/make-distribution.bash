@@ -14,8 +14,11 @@ tar -c -v \
 		./dist/jbs-commands.tar \
 		./tools/install-local.bash \
 		./tools/install-remote.bash \
+		./tools/scan-hosts.bash \
 	>./dist/jbs-dist.tar
 
-gpg --detach-sign --armor ./dist/jbs-dist.tar
+test ! -e ./dist/jbs-dist.tar.asc || rm ./dist/jbs-dist.tar.asc
+
+gpg --detach-sign --armor --output ./dist/jbs-dist.tar.asc ./dist/jbs-dist.tar
 
 exit 0
