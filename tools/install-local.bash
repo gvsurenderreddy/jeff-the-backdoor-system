@@ -10,7 +10,7 @@ test "${UID}" -eq 0
 apt-get install uuid curl gnupg
 
 
-DIST='http://127.0.0.1/dist'
+DIST='http://volution.ro/eros/jbs/dist'
 
 
 test ! -e /etc/jbs
